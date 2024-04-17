@@ -1,0 +1,48 @@
+###
+GET http://localhost:3002/api/realisateurs?nom=Lana Wachowski
+# recuperer l'id du realisateur pour l'associer au film
+
+###
+GET http://localhost:3002/api/films?nom=Lana Wachowski
+# recuperer l'id du film pour l'associer à une seance 
+
+###
+POST http://localhost:3002/api/films
+Content-Type: application/json
+
+{
+    "title": "Matrix Revolutions",
+    "releaseYear": 2023,
+    "genre": "Action",
+    "directors": ["661fea3bf7c940b364954bad"]
+}
+
+###
+
+GET http://localhost:3002/api/realisateurs
+
+###
+
+POST http://localhost:3002/api/realisateurs
+Content-Type: application/json
+
+{
+    "name": "Lana Wachowski",
+    "birthDate": "1965-06-21",
+    "biography": "Lana Wachowski naît le 21 juin 1965 à Chicago et est enregistrée comme garçon sous le nom de Laurence Wachowski, diminué en Larry"
+}
+###
+
+GET http://localhost:3002/api/sessions
+
+###
+
+POST http://localhost:3002/api/seances
+Content-Type: application/json
+
+{
+    "film": "661feb97f7c940b364954bb1",
+    "date": "2024-04-17",
+    "time": "18:00",
+    "availableSeats": 100
+}
